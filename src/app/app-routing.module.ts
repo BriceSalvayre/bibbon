@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'meal',
     loadChildren: () => import('./pages/meal/meal.module').then( m => m.MealPageModule)
+  },
+  {
+    path: 'configuration',
+    loadChildren: () => import('./pages/configuration/configuration.module').then( m => m.ConfigurationPageModule)
   }
 ];
 

@@ -14,15 +14,21 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
-      title: 'Inbox',
-      url: '/calendar',
-      icon: 'mail'
+      title: 'Repas',
+      url: '/meal',
+      icon: 'restaurant'
     },
     {
-      title: 'Outbox',
-      url: '/meal',
-      icon: 'paper-plane'
+      
+      title: 'Calendrier',
+      url: '/calendar',
+      icon: 'calendar'
     },
+    {
+      title: 'Configuration',
+      url: '/configuration',
+      icon: 'settings'
+    }
   ];
 
   constructor(
