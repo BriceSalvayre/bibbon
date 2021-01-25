@@ -1,0 +1,7 @@
+{
+  "name": "bibbon",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
