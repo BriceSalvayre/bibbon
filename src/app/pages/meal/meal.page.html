@@ -3,10 +3,41 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>meal</ion-title>
+    <ion-title>Repas de {{babyName}} </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
- <ion-title>Page Repas</ion-title>
+    <ion-item>
+      <ion-grid>
+        <ion-row style="font-size: 85%;">
+          <ion-col>Quantiter : 140ml </ion-col>
+          <ion-col>Heure : 14h30 </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <img src="../../../assets/icon/bluetooth.png">
+  <ion-button expand="block">Saisie manuelle</ion-button>
 </ion-content>
+
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+
+    <ion-tab-button tab="../meal">
+      <ion-icon name="restaurant"></ion-icon>
+      <ion-label>Repas</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="../calendar">
+      <ion-icon name="calendar"></ion-icon>
+      <ion-label>Calendrier</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="../configuration">
+      <ion-icon name="settings"></ion-icon>
+      <ion-label>Configuration</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>

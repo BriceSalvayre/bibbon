@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>subscription</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" ngModel name="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" ngModel name="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Confirm Passeword</ion-label>
+      <ion-input type="password" ngModel name="passorwd2"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">User Name</ion-label>
+      <ion-input type="text" ngModel name="userName"></ion-input>
+    </ion-item>
+
+    <ion-button type="submit" expand="block">Valider</ion-button>
+  </form>
+</ion-content>
