@@ -10,13 +10,14 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent implements OnInit {
-  name = "brice";
+  name = "Brice";
+  baseIcon = "../assets/svg/";
   public selectedIndex = 0;
   public appPages = [
     {
       title: 'Repas',
       url: '/meal',
-      icon: 'restaurant'
+      icon: 'meal'
     },
     {
       
@@ -28,12 +29,12 @@ export class AppComponent implements OnInit {
       
       title: 'Signup',
       url: '/subscription',
-      icon: 'people'
+      icon: 'family1'
     },
     {
       title: 'Configuration',
       url: '/configuration',
-      icon: 'settings'
+      icon: 'setting'
     }
   ];
 

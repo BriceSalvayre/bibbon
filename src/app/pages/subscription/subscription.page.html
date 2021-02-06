@@ -3,11 +3,12 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>subscription</ion-title>
+    <ion-title>Inscription</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <p style="text-align: center; padding: 0% 5%; font-size: 1.5rem;">Veuillez saisir votre identité</p>
   <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
     <ion-item>
       <ion-label position="floating">Email</ion-label>
@@ -28,7 +29,7 @@
       <ion-label position="floating">User Name</ion-label>
       <ion-input type="text" ngModel name="userName"></ion-input>
     </ion-item>
-
-    <ion-button type="submit" expand="block">Valider</ion-button>
+    
+    <ion-button type="submit" expand="block" style="margin-top: 5%;">Valider</ion-button>
   </form>
 </ion-content>

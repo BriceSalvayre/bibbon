@@ -10,34 +10,36 @@
 <ion-content>
     <ion-item>
       <ion-grid>
+        <ion-row>
+          <ion-col>Dernier Repas :</ion-col>
+        </ion-row>
         <ion-row style="font-size: 85%;">
-          <ion-col>Quantiter : 140ml </ion-col>
-          <ion-col>Heure : 14h30 </ion-col>
+          <ion-col>
+            <ion-img src="../../../assets/icon/bottle.png" style="height: 85%; width: 85%;"></ion-img>
+          </ion-col>
+          <ion-col>Heure: 14h30 </ion-col>
+          <ion-col>Quantiter: 140ml </ion-col>
         </ion-row>
       </ion-grid>
     </ion-item>
-    <img src="../../../assets/icon/bluetooth.png">
-  <ion-button expand="block">Saisie manuelle</ion-button>
+    <ion-grid>
+      <ion-row style=" margin: 10%;">
+        <ion-col><img src="../../../assets/icon/bluetooth1.png" style="size: 200%;">
+        </ion-col>
+        <ion-col style="font-size: 85%;">Récuperation des données du repas</ion-col>
+      </ion-row>
+    </ion-grid>
+  <ion-button expand="block" style="margin-top: 5%" (click)="presentModal()">Saisie manuelle</ion-button>
 </ion-content>
 
-
-<ion-tabs>
-  <ion-tab-bar slot="bottom">
-
-    <ion-tab-button tab="../meal">
-      <ion-icon name="restaurant"></ion-icon>
-      <ion-label>Repas</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="../calendar">
-      <ion-icon name="calendar"></ion-icon>
-      <ion-label>Calendrier</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="../configuration">
-      <ion-icon name="settings"></ion-icon>
-      <ion-label>Configuration</ion-label>
-    </ion-tab-button>
-
-  </ion-tab-bar>
-</ion-tabs>
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col><ion-img src="../../../assets/icon/bottle.png"></ion-img>Repas</ion-col>
+        <ion-col><ion-img src="../../../assets/icon/book.png"></ion-img>Journal</ion-col>
+        <ion-col><ion-img src="../../../assets/icon/calendar.png"></ion-img>Calendrier</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>
