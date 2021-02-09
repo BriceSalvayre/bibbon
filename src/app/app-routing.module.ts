@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path: 'subscription',
     loadChildren: () => import('./pages/subscription/subscription.module').then( m => m.SubscriptionPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   }
 ];
 

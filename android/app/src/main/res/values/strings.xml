@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Bibbon</string>
+    <string name="title_activity_main">Bibbon</string>
+    <string name="package_name">bibbon.app</string>
+    <string name="custom_url_scheme">bibbon.app</string>
+</resources>

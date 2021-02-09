@@ -15,7 +15,7 @@ export class SubscriptionPage  implements OnInit {
     
     const dataForm = form.value;
     console.log(dataForm);
-    this.getData();
+    //this.getData();
     //this.postData();
   
     /*const myurl = new HttpRequest("GET",url);

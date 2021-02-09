@@ -12,14 +12,14 @@ export class MealPage {
   public userList;
 
   constructor(public http: HttpClient, public modalController: ModalController) {
-      this.http.get('http://localhost:8100/meal').subscribe((response) => {
+     /* this.http.get('http://localhost:8100/meal').subscribe((response) => {
         console.log(response);
       },
       (err)=>{
         console.log(err);
         console.log("2");
       });
-      
+   */   
   }
   async presentModal() {
     const modal = await this.modalController.create({
