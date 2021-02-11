@@ -1,3 +1,4 @@
+import { UserService } from './../../services/user.service';
 import { Component, OnInit, Query } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { HttpClient, HttpHeaderResponse, HttpHeaders, HttpRequest } from "@angular/common/http";
@@ -8,15 +9,26 @@ import { HttpClient, HttpHeaderResponse, HttpHeaders, HttpRequest } from "@angul
   styleUrls: ["./subscription.page.scss"],
 })
 export class SubscriptionPage  implements OnInit {
-  constructor(public http: HttpClient) {}
   public url = "http://localhost:3000/subscription";
+  public tableau = [];
+
+  constructor(public http: HttpClient,private user: UserService) {
+    
+  }
+  
+  
   
   onSubmit(form: NgForm) {
-    
+    // Parse des données du formulaire
     const dataForm = form.value;
-    console.log(dataForm);
-    //this.getData();
-    //this.postData();
+
+    //Ajout des données formulaire dans mon services
+    /*this.user.addData(dataForm);
+    console.log(this.user.getData());*/
+    
+    this.user.addData([dataForm]);
+    this.postData();
+    
   
     /*const myurl = new HttpRequest("GET",url);
     this.http.request(myurl).subscribe((response) =>{
@@ -28,6 +40,10 @@ export class SubscriptionPage  implements OnInit {
   ngOnInit() {
 
   }
+  /*async jsonPost(){
+    this.tableau =  await this.provider.getData()
+    console.log(this.tableau);
+  }*/
 
 
   getData(){
@@ -42,7 +58,7 @@ export class SubscriptionPage  implements OnInit {
     );
   }
   postData(){
-    this.http.post(this.url, "").subscribe(
+    this.http.post(this.url,this.user.getData()).subscribe(
       (response) => {
         console.log(response);
       }
