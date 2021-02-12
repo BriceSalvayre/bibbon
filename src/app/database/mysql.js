@@ -7,6 +7,7 @@ const db = mysql.createConnection(
     database: 'bibbon'
     }
 );
+
 module.exports = {
     db
 };

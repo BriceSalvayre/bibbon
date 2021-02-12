@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const mysql = require("../../database/mysql");
+const mysql = require("../../database/mysql2");
 const fs = require('fs').promises;
 
 router.use(cors());
