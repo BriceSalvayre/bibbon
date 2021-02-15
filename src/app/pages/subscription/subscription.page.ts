@@ -26,6 +26,7 @@ export class SubscriptionPage  implements OnInit {
     /*this.user.addData(dataForm);
     console.log(this.user.getData());*/
     
+    // ceci marche parfaitement
     this.user.addData([dataForm]);
     this.postData();
     
@@ -45,18 +46,6 @@ export class SubscriptionPage  implements OnInit {
     console.log(this.tableau);
   }*/
 
-
-  getData(){
-    this.http.get(this.url).subscribe(
-      (response) => {
-        console.log(response);
-      },
-      (err) => {
-        console.log(err);
-      }
-
-    );
-  }
   postData(){
     this.http.post(this.url,this.user.getData()).subscribe(
       (response) => {

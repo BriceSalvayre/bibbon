@@ -4,6 +4,7 @@ const cors = require("cors");
 const mysql = require("../../database/mysql2");
 const fs = require('fs').promises;
 
+
 router.use(cors());
 router.use(bodyParser.urlencoded({extended: true}));
 router.use(bodyParser.json());

@@ -2,20 +2,20 @@
   <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
     <ion-item>
       <ion-label> Type de repas</ion-label>
-      <ion-select ngModel name="type" value="Biberons" interface="action-sheet">
-      <ion-select-option value="Biberons">Biberons</ion-select-option>
-      <ion-select-option value="Seins">Seins</ion-select-option>
+      <ion-select ngModel name="meal_type" value="Biberons" interface="action-sheet">
+      <ion-select-option value="bottle">Biberons</ion-select-option>
+      <ion-select-option value="breast">Seins</ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item>
       <ion-label>Quantité :</ion-label>
-      <ion-select value="1" ngModel name="value">
+      <ion-select value="1" ngModel name="meal_qte">
         <ion-select-option *ngFor="let val of bibValue">{{val}}mL</ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item>
       <ion-label>Heure :</ion-label>
-        <ion-datetime ngModel name="time" display-format="HH:mm"></ion-datetime>
+        <ion-datetime ngModel name="meal_date" display-format="HH:mm"></ion-datetime>
     </ion-item>
     <ion-grid>
       <ion-row>

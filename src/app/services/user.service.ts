@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -13,7 +14,9 @@ export class UserService {
     user_mail: "null"
 }]
 
-  constructor() { }
+  private meal = {};
+
+  constructor(public http:HttpClient) { }
 
   getData(){
     return this.dataUser;
@@ -22,7 +25,49 @@ export class UserService {
   addData(dataEntry){
     this.dataUser = dataEntry;
   }
-  dataBaseConnect(){
-    
+
+  /**
+   * récupère l'information de l'url pointé
+   * @param url l'url de la page que pointe le router
+   * @return : Object
+   */
+  getUrlData(url){
+    this.http.get(url).subscribe(
+      (response) => {
+        console.log(response);
+        return response;
+      },
+      (err) => {
+        console.log(err);
+      }
+
+    );
+  }
+  /**
+   * POST les données dans le body pointé
+   * @param url l'url de la page que pointe le router
+   * @param data donné JSON
+   */
+  postData(url,data){
+    this.http.post(url,data).subscribe(
+      (response) => {
+        console.log(response);
+      }
+    )
+  }
+
+  getUrlDataMeal(url){
+    this.http.get(url).subscribe(
+      (response) => {
+        this.meal = response;
+        console.log(this.meal);
+        return this.meal;
+        
+      },
+      (err) => {
+        console.log(err);
+      }
+
+    );
   }
 }

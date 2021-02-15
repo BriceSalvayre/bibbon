@@ -1,3 +1,4 @@
+import { UserService } from './../../../services/user.service';
 import { NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
@@ -10,9 +11,19 @@ import { ToastController } from '@ionic/angular';
 })
 export class ModalPage implements OnInit {
   public bibValue = [];
+  public url = "http://localhost:3000/meal/modal";
 
+  public meal =[{
+    meal_type : "null",
+    meal_qte : "0",
+    meal_date : "0"
+  }]
 
-  constructor( public modalController: ModalController,public toastController: ToastController) { }
+  constructor( 
+    public modalController: ModalController,
+    public toastController: ToastController,
+    public service: UserService
+    ) { }
 
   ngOnInit() {
     var i;
@@ -21,6 +32,7 @@ export class ModalPage implements OnInit {
     }
     console.log(this.bibValue);
   }
+
   dismiss() {
     // using the injected ModalController this page
     // can "dismiss" itself and optionally pass back data
@@ -28,16 +40,23 @@ export class ModalPage implements OnInit {
       'dismissed': true
     });
   }
+
   onSubmit(form: NgForm){
-    console.log(form.value);
-    this.presentToast(form);
+    //this.service.getUrlData(this.url);
+    //console.log(form.value);
+    this.meal = form.value;
+    this.service.postData(this.url,this.meal);
+
+    this.presentToast(this.meal);
     this.dismiss();
   }
-  async presentToast(form) {
+  
+  async presentToast(meal) {
     const toast = await this.toastController.create({
-      message: 'Sauvegarder pour un repas au '+form.value.type +"\n"+`l'enfant à bu :`+form.value.value,
+      message: 'Sauvegarder pour un repas au '+meal.meal_type +"\n"+`l'enfant à bu :`+meal.meal_qte,
       duration: 3000
     });
     toast.present();
   }
+
 }
