@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-grid style="text-align: center;">
+  <ion-row>
+    <ion-col>
+      <p>Que puis-je faire pour vous aujourd'hui</p>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-card-header><a routerLink="/meal"><ion-img src="../../../assets/icon/bottle.png"></ion-img></a></ion-card-header>
+        <ion-card-content>Entré un repas</ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col>
+      <ion-card>
+        <ion-card-header><a routerLink="/calendar"><ion-img src="../../../assets/icon/calendar.png"></ion-img></a></ion-card-header>
+        <ion-card-content>Consulter le calendrier</ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-card-header><a routerLink="/diary"><ion-img src="../../../assets/icon/book.png"></ion-img></a></ion-card-header>
+        <ion-card-content>Consulter le journal</ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col>
+      <ion-card>
+        <ion-card-header><a routerLink="/child"><ion-img src="../../../assets/icon/embryo.png"></ion-img></a></ion-card-header>
+        <ion-card-content>Ajouter un enfant</ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>

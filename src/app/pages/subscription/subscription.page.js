@@ -32,7 +32,7 @@ router.post("/", async (req, res) => {
     const data = await req.body;
     console.log("post");
     //console.log(data);
-    mysql.db.query('INSERT INTO people SET ?', data , (err, result) => {
+    mysql.db.query('INSERT INTO users SET ?', data , (err, result) => {
       if (err) {
         res.status(500).json({ error: err });
       } else {
@@ -51,7 +51,7 @@ router.post("/test2", async (req, res) => {
 }]
   console.log("post");
   console.log(data);
-  mysql.db.query('INSERT INTO people SET ?', data , (err, result) => {
+  mysql.db.query('INSERT INTO users SET ?', data , (err, result) => {
     if (err) {
       res.status(500).json({ error: err });
     } else {
@@ -67,7 +67,7 @@ router.post("/test", async (req, res) => {
   .then((data) => {
   req.users = JSON.parse(data);
   //next();
-  mysql.db.query('INSERT INTO people SET ?', req.users , (err, result) => {
+  mysql.db.query('INSERT INTO users SET ?', req.users , (err, result) => {
     if (err) {
       res.status(500).json({ error: err });
     } else {

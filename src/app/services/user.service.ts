@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { promise } from 'protractor';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,8 @@ export class UserService {
     user_password: "null",
     user_mail: "null"
 }]
+
+  private tableau : any;
 
   private meal = {};
 
@@ -69,5 +72,18 @@ export class UserService {
       }
 
     );
+  }
+  storeData(url){
+    this.http.get(url).subscribe(
+      (response) => {
+        this.tableau = response;
+      },
+      (err) => {
+        console.log(err)
+      },
+    )
+  }
+  getLoginData(){
+    return this.tableau;
   }
 }

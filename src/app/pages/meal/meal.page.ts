@@ -22,8 +22,10 @@ export class MealPage implements OnInit{
     public modalController: ModalController,
     public service: UserService
     ) {
-      const test = this.getData();
-      console.log(test);
+      
+      
+
+
      /* this.http.get('http://localhost:8100/meal').subscribe((response) => {
         console.log(response);
       },
@@ -36,7 +38,7 @@ export class MealPage implements OnInit{
   ngOnInit() {
     //this.addData( await this.service.getUrlData(this.url))
     //this.service.getUrlData(this.url)
-
+    this.getData();
   
    //this.service.getUrlDataMeal(this.url);
    
