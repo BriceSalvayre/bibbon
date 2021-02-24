@@ -31,11 +31,6 @@ export class AppComponent implements OnInit {
       icon: 'calendar'
     },
     {
-      title: 'Signup',
-      url: '/subscription',
-      icon: 'family1'
-    },
-    {
       title: 'Journal',
       url: '/diary',
       icon: 'book'
@@ -44,6 +39,11 @@ export class AppComponent implements OnInit {
       title: 'Configuration',
       url: '/configuration',
       icon: 'setting'
+    },
+    {
+      title: 'Signup',
+      url: '/subscription',
+      icon: 'family1'
     }
 
   ];

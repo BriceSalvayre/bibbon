@@ -37,6 +37,7 @@ CREATE TABLE childs
 (
 id_child tinyint unsigned auto_increment,
 child_name varchar(50),
+child_gender varchar(30),
 child_birth date,
 child_height int,
 child_weight int,

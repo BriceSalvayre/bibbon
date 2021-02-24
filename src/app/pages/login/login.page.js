@@ -7,7 +7,7 @@ router.use(cors());
 router.use(bodyParser.urlencoded({extended: true}));
 router.use(bodyParser.json());
 
-router.get("/", (req,res)=>{
+router.get("/all", (req,res)=>{
     mysql.db.query('SELECT * FROM users;', async (err, rows) => {
         const data = rows;
         await res.status(200).json(data);

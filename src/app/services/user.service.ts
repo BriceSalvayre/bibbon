@@ -17,6 +17,8 @@ export class UserService {
 
   private tableau : any;
 
+  public APIurl = "https://safe-scrubland-34327.herokuapp.com/";
+
   private meal = {};
 
   constructor(public http:HttpClient) { }

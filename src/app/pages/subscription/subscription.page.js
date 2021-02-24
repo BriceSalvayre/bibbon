@@ -20,7 +20,7 @@ router.get("/", (req, res) => {
   //res.sendFile('subscription.page.html',{root: 'src/app/pages/subscription/'});
     //const data = await req.body;
     console.log("get");
-    mysql.db.query('SELECT * from people', async (err, rows) => {
+    mysql.db.query('SELECT * from users', async (err, rows) => {
         console.log(rows);
         const data = rows;
         await res.status(200).json(data);

@@ -12,4 +12,7 @@ export class ChildPage implements OnInit {
   ngOnInit() {
   }
 
+  onSubmit(){
+    
+  }
 }

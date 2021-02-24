@@ -11,7 +11,7 @@ import { ToastController } from '@ionic/angular';
 })
 export class ModalPage implements OnInit {
   public bibValue = [];
-  public url = "http://localhost:3000/meal/modal";
+  public url = "modal";
 
   public meal =[{
     meal_type : "null",
@@ -23,7 +23,9 @@ export class ModalPage implements OnInit {
     public modalController: ModalController,
     public toastController: ToastController,
     public service: UserService
-    ) { }
+    ) { 
+      this.url = this.service.APIurl + this.url ;
+    }
 
   ngOnInit() {
     var i;

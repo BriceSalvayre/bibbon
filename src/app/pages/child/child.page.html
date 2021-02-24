@@ -5,5 +5,55 @@
 </ion-header>
 
 <ion-content>
-<p>Welcome to the child page</p>
+  <p style="text-align: center">Félicitation !</p>
+
+  <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <ion-item>
+      <ion-label position="floating">Nom du nouveau-née</ion-label>
+      <ion-input type="text" ngModel name="child_name"></ion-input>
+    </ion-item>
+    <ion-radio-group>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+            <ion-label>Garçon</ion-label>
+            <ion-radio slot="end"></ion-radio>
+          </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+            <ion-label>Fille</ion-label>
+            <ion-radio slot="end"></ion-radio>
+          </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      </ion-radio-group>
+    <ion-item>
+      <ion-label position="stacked">Date de naissance</ion-label>
+      <ion-datetime displayFormat="DD MM YYYY"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">poids de naissance</ion-label>
+      <ion-input type="text" ngModel name="child_weight"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">taille de naissance</ion-label>
+      <ion-input type="text" ngModel name="child_height"></ion-input>
+    </ion-item>
+
+    <ion-grid style="margin-top: 5%;">
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" expand="block">Valider</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" color="danger" routerLink="/home">Annuler</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
 </ion-content>

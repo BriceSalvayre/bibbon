@@ -10,7 +10,7 @@ import { ModalController } from '@ionic/angular';
 })
 export class MealPage implements OnInit{
   babyName = "Joe";
-  public url = "http://localhost:3000/meal";
+  public url = "meal";
   public meal :any =[{
     meal_type : "bottle",
     meal_qte : "0",
@@ -22,6 +22,8 @@ export class MealPage implements OnInit{
     public modalController: ModalController,
     public service: UserService
     ) {
+
+      this.url = this.service.APIurl + this.url ;
       
       
 

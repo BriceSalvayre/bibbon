@@ -10,7 +10,7 @@ import { of, Observable } from 'rxjs';
   styleUrls: ["./subscription.page.scss"],
 })
 export class SubscriptionPage  implements OnInit {
-  public url = "http://localhost:3000/subscription";
+  public url = "subscription";
   public tableau :any;
   private request: Observable<any>;
 
@@ -18,6 +18,8 @@ export class SubscriptionPage  implements OnInit {
     public http: HttpClient,
     private user: UserService,
     ) {
+      this.url = this.user.APIurl + this.url ;
+      console.log(this.url);
   }
   
   onSubmit(form: NgForm) {

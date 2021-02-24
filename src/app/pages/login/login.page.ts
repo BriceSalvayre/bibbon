@@ -9,12 +9,12 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  public url = "http://localhost:3000/login";
+  public url = "login";
   //public urlTest = "http://localhost:3000/login/mail";
   public users : any;
 
   constructor(public service : UserService) {
-
+    this.url = this.service.APIurl + this.url ;
    }
 
   ngOnInit() {

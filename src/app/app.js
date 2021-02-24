@@ -16,6 +16,6 @@ app.use('/login',loginRoute);
 //app.use(urlencoded({extended:true}));
 app.use(cors());
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log('app started');
 });

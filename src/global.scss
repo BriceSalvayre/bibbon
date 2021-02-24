@@ -33,6 +33,14 @@
     border-radius: 5%;
  }
 
- :root {
-     background: rgb(203, 252, 248);
- }
+/*ion-content {
+     --background: rgb(203, 252, 248);
+ }*/
+:root{
+    --ion-background-color: rgb(203, 252, 248);
+}
+
+ ion-footer ion-img{
+    height:55%;
+    width: 55%;
+}
