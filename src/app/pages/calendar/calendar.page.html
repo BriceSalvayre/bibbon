@@ -8,8 +8,15 @@
 </ion-header>
 
 <ion-content>
-  <ion-item>Page calendrier</ion-item>
+  <ion-calendar 
+    [(ngModel)]="date"
+    (change)="onChange($event)"
+    [type]="type"
+    [format]="'YYYY-MM-DD'"
+    >
+  </ion-calendar>
 </ion-content>
+
 
 <ion-footer>
   <ion-toolbar>
