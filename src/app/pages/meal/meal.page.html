@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="success">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -8,28 +8,38 @@
 </ion-header>
 
 <ion-content>
-    <ion-item>
+  <ion-card>
       <ion-grid>
         <ion-row>
           <ion-col>Dernier Repas :</ion-col>
-        </ion-row>
-        <ion-row style="font-size: 85%;">
+        </ion-row >
+        <ion-row style="font-size: 85%;" class="ion-text-center">
           <ion-col>
             <ion-img src="../../../assets/icon/{{meal[0].meal_type}}.png" style="height: 85%; width: 85%;"></ion-img>
           </ion-col>
-          <ion-col>Heure: <br> {{meal[0].meal_date | date:'HH:mm'}} </ion-col>
-          <ion-col>Quantiter: {{meal[0].meal_qte}}ml </ion-col>
+          <ion-col >Heure: <br> <span>{{meal[0].meal_date | date:'HH:mm'}} </span></ion-col>
+          <ion-col>Quantiter: <br><span>{{meal[0].meal_qte}}ml </span></ion-col>
         </ion-row>
       </ion-grid>
-    </ion-item>
+  </ion-card>
+  <ion-card>
     <ion-grid>
-      <ion-row style=" margin: 10%;">
-        <ion-col><img src="../../../assets/icon/bluetooth1.png" style="size: 200%;">
+      <ion-row>
+        <ion-col size="3"><img src="../../../assets/icon/bluetooth1.png" style="size: 200%;">
         </ion-col>
-        <ion-col style="font-size: 85%;">Récuperation des données du repas</ion-col>
+        <ion-col size="9" style="font-size: 100%; text-align: center;">Récuperation des données du repas</ion-col>
       </ion-row>
     </ion-grid>
-  <ion-button expand="block" style="margin-top: 5%" (click)="presentModal()">Saisie manuelle</ion-button>
+  </ion-card>
+  <ion-grid style="margin: 5%">
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-button (click)="presentModal()">Saisie manuelle</ion-button>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 
 <ion-footer>

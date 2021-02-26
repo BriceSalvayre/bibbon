@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="success">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -7,21 +7,23 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-<ion-grid style="text-align: center;">
+<ion-content class="background">
+<ion-grid>
   <ion-row>
     <ion-col>
+      <ion-card>
       <p>Que puis-je faire pour vous aujourd'hui</p>
+    </ion-card>
     </ion-col>
   </ion-row>
   <ion-row>
-    <ion-col size="6">
+    <ion-col size="6" size-lg>
       <ion-card>
         <ion-card-header><a routerLink="/meal"><ion-img src="../../../assets/icon/bottle.png"></ion-img></a></ion-card-header>
         <ion-card-content>Entrer un repas</ion-card-content>
       </ion-card>
     </ion-col>
-    <ion-col size="6">
+    <ion-col size="6" size-lg>
       <ion-card>
         <ion-card-header><a routerLink="/calendar"><ion-img src="../../../assets/icon/calendar.png"></ion-img></a></ion-card-header>
         <ion-card-content>Consulter calendrier</ion-card-content>
@@ -29,18 +31,20 @@
     </ion-col>
   </ion-row>
   <ion-row>
-    <ion-col size="6">
+    <ion-col size="6" size-lg>
       <ion-card>
         <ion-card-header><a routerLink="/diary"><ion-img src="../../../assets/icon/book.png"></ion-img></a></ion-card-header>
         <ion-card-content>Consulter journal</ion-card-content>
       </ion-card>
     </ion-col>
-    <ion-col size="6">
+    <ion-col size="6" size-lg>
       <ion-card>
         <ion-card-header><a routerLink="/child"><ion-img src="../../../assets/icon/embryo.png"></ion-img></a></ion-card-header>
         <ion-card-content>Ajouter un enfant</ion-card-content>
       </ion-card>
     </ion-col>
+  </ion-row>
+  <ion-row style="padding-bottom: 10%;">
   </ion-row>
 </ion-grid>
 </ion-content>

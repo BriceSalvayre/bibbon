@@ -33,14 +33,19 @@
     border-radius: 5%;
  }
 
-/*ion-content {
-     --background: rgb(203, 252, 248);
+/*ion-toolbar {
+    class: color=success
  }*/
-:root{
-    --ion-background-color: rgb(203, 252, 248);
-}
+ .background{
+    background-image: url(assets/181.jpg);
+ }
+
 
  ion-footer ion-img{
+    margin: 0% 25%;
     height:55%;
     width: 55%;
+}
+ion-footer{
+    text-align: center;
 }

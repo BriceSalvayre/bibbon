@@ -1,1 +1,12 @@
-
+span{
+  font-size: 150%;
+  font-weight: bold;  
+}
+ion-content{
+    --ion-background-color : transparent;
+    background-image: url(../../../assets/181.jpg);
+    background-size: 175%;
+}
+ion-card{
+    background: white;
+}
