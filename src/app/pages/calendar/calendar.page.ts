@@ -9,6 +9,7 @@ export class CalendarPage implements OnInit {
 
   date: string;
   type: 'string';
+  title: string;
 
   constructor() { }
 
@@ -17,6 +18,7 @@ export class CalendarPage implements OnInit {
 
   onChange($event) {
     console.log($event._d);
+    this.title = $event._d;
   }
 
 
