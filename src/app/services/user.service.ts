@@ -15,7 +15,7 @@ export class UserService {
     user_mail: "null"
 }]
 
-  private tableau : any;
+  public tableau : {};
 
   public APIurl = "https://safe-scrubland-34327.herokuapp.com/";
 
@@ -53,7 +53,7 @@ export class UserService {
    * @param url l'url de la page que pointe le router
    * @param data donné JSON
    */
-  postData(url,data){
+  postData(url:string,data:any){
     this.http.post(url,data).subscribe(
       (response) => {
         console.log(response);
@@ -75,17 +75,23 @@ export class UserService {
 
     );
   }
+
   storeData(url){
     this.http.get(url).subscribe(
       (response) => {
         this.tableau = response;
+        console.log("1");
+        return this.tableau;
       },
       (err) => {
         console.log(err)
       },
     )
   }
+  
   getLoginData(){
+    console.log("2");
     return this.tableau;
+
   }
 }

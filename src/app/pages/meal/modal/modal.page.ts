@@ -10,9 +10,13 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./modal.page.scss'],
 })
 export class ModalPage implements OnInit {
+
   public bibValue = [];
+
+  // initialize the page "url"
   public url = "modal";
 
+  // initialization of the objet "meal"
   public meal =[{
     meal_type : "null",
     meal_qte : "0",
@@ -23,39 +27,45 @@ export class ModalPage implements OnInit {
     public modalController: ModalController,
     public toastController: ToastController,
     public service: UserService
-    ) { 
+    ) {
+      // Concatenation of the service url and the page url
       this.url = this.service.APIurl + this.url ;
     }
-
+  
+  //On initialization set value of "bibValue"
   ngOnInit() {
     var i;
     for(i=0; i<=300; i+=10){
       this.bibValue.push(i);
     }
-    console.log(this.bibValue);
   }
 
+
+  onSubmit(form: NgForm){
+    //gather input data
+    this.meal = form.value;
+
+    //Submit HTTP request
+    this.service.postData(this.url,this.meal);
+
+    // Open Toast with meal values
+    this.presentToast(this.meal);
+
+    // Close modal
+    this.dismiss();
+  }
+
+  // Close modal
   dismiss() {
-    // using the injected ModalController this page
-    // can "dismiss" itself and optionally pass back data
     this.modalController.dismiss({
       'dismissed': true
     });
   }
-
-  onSubmit(form: NgForm){
-    //this.service.getUrlData(this.url);
-    //console.log(form.value);
-    this.meal = form.value;
-    this.service.postData(this.url,this.meal);
-
-    this.presentToast(this.meal);
-    this.dismiss();
-  }
+  
   
   async presentToast(meal) {
     const toast = await this.toastController.create({
-      message: 'Sauvegarder pour un repas au '+meal.meal_type +"\n"+`l'enfant à bu :`+meal.meal_qte,
+      message: `l'enfant à bu : `+meal.meal_qte,
       duration: 3000
     });
     toast.present();

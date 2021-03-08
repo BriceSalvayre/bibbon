@@ -20,31 +20,14 @@ export class MealPage implements OnInit{
   constructor(
     public http: HttpClient,
     public modalController: ModalController,
-    public service: UserService
-    ) {
-
+    public service: UserService )
+    
+    {
       this.url = this.service.APIurl + this.url ;
-      
-      
-
-
-     /* this.http.get('http://localhost:8100/meal').subscribe((response) => {
-        console.log(response);
-      },
-      (err)=>{
-        console.log(err);
-        console.log("2");
-      });
-   */   
-  }
-  ngOnInit() {
-    //this.addData( await this.service.getUrlData(this.url))
-    //this.service.getUrlData(this.url)
-    this.getData();
+    }
   
-   //this.service.getUrlDataMeal(this.url);
-   
-   
+  ngOnInit() {
+    this.getData();   
   }
 
   async presentModal() {
