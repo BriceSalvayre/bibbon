@@ -81,9 +81,23 @@ FOREIGN KEY (id_user) REFERENCES users (id_user),
 FOREIGN KEY (id_child) REFERENCES childs (id_child)
 );
 
-
-Select * from childs c
-join relationship r
+-- Jointure table childs et users
+SELECT * FROM childs c
+JOIN relationship r
 ON c.id_child = r.id_child
-join users u
-on u.id_user = r.id_user;
+JOIN users u
+ON u.id_user = r.id_user;
+
+-- Procédure stockées
+DELIMITER //
+CREATE PROCEDURE login
+(IN userMail CHAR(20), IN userPass CHAR(20))
+BEGIN
+SELECT id_user
+FROM users
+WHERE user_mail = userMail AND user_password = userPass;
+END //
+DELIMITER ;
+
+-- Appel de la procédure
+CALL login('mail','pass');
