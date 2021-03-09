@@ -9,11 +9,8 @@ import { promise } from 'protractor';
 
 export class UserService {
 
-  private dataUser = [{
-    user_name: "null",
-    user_password: "null",
-    user_mail: "null"
-}]
+  public dataUser = [{id_user : 0}];
+   
 
   public tableau : {};
 
@@ -81,14 +78,13 @@ export class UserService {
       (response) => {
         this.tableau = response;
         console.log("1");
-        return this.tableau;
       },
       (err) => {
         console.log(err)
       },
     )
   }
-  
+
   getLoginData(){
     console.log("2");
     return this.tableau;

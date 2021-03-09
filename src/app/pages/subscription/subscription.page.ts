@@ -16,36 +16,35 @@ export class SubscriptionPage  implements OnInit {
 
   constructor(
     public http: HttpClient,
-    private user: UserService,
+    private service: UserService,
     ) {
-      this.url = this.user.APIurl + this.url ;
-      console.log(this.url);
+      this.url = this.service.APIurl + this.url ;
   }
   
   onSubmit(form: NgForm) {
     // Parse des données du formulaire
     const dataForm = form.value;
 
-    //Ajout des données formulaire dans mon services
-    /*this.user.addData(dataForm);
-    console.log(this.user.getData());*/
-    
-    // ceci marche parfaitement
-    this.user.addData([dataForm]);
+    //Avant d'envoyer les données dans la BD , contrôle de surface
+    // Pregmatch du password (si possible dynamique "onChange") et verif si pass1 et pass2 sont identiques
+    // dans la BD contrôle de la saisie du mail si deja existant (crée une procédure pour sécurisé)
+
+    // ici on envoi les données dans la BD
+    this.service.addData([dataForm]);
     this.postData();
+
+    //un fois inscrit redirection vers child
+    // Trouvé une solution pour l'inscription des "co-parent"
 
 
     console.log(this.tableau);
   
   }
   ngOnInit() {
-    
-    this.storeData();
-
   }
 
   postData(){
-    this.http.post(this.url,this.user.getData()).subscribe(
+    this.http.post(this.url,this.service.getData()).subscribe(
       (response) => {
         console.log(response);
       }
