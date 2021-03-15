@@ -5,22 +5,21 @@
 </ion-header>
 
 <ion-content>
-  <h2 style="text-align: center;"> Bienvenue </h2>
-  <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)" style="margin-top: 20%;">
+  <h2 style="text-align: center">Bienvenue</h2>
+  <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)" style="margin-top: 20%">
     <ion-item>
       <ion-label position="floating">mail :</ion-label>
-      <ion-input ngModel name="user_mail"type="text"></ion-input>
+      <ion-input ngModel name="user_mail" type="text"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">password :</ion-label>
       <ion-input ngModel name="user_password" type="password"></ion-input>
     </ion-item>
-    <ion-button type="submit" expand="block" style="margin-top: 10%;">Valider</ion-button>
+    <ion-button type="submit" expand="block" style="margin-top: 10%">Valider</ion-button>
   </form>
   <div>
-    <p style="text-align: center;">
+    <p style="text-align: center">
       <a routerLink="/subscription">S'inscrire</a>
     </p>
-
-    </div>
+  </div>
 </ion-content>

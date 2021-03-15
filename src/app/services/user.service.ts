@@ -48,7 +48,7 @@ export class UserService {
   /**
    * POST les données dans le body pointé
    * @param url l'url de la page que pointe le router
-   * @param data donné JSON
+   * @param data données JSON
    */
   postData(url:string,data:any){
     this.http.post(url,data).subscribe(
