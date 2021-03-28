@@ -1,8 +1,10 @@
 .left {
- margin-left: 8%;
+ margin-left: 3%;
+ margin-top: -3%;
 }
 .right {
- margin-right: 8%
+ margin-right: 3%;
+ margin-top: -3%;
 }
 
 .circle {
@@ -11,7 +13,11 @@
 }
 
 .text {
-    font-weight: bold;
     text-align: center;
     font-size: 60%;
+}
+
+span{
+    font-weight: bold;
+    font-size: 75%;
 }

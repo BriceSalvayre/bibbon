@@ -17,10 +17,11 @@ export class ModalPage implements OnInit {
   public url = "modal";
 
   // initialization of the objet "meal"
-  public meal =[{
+  public meal :any =[{
     meal_type : "null",
     meal_qte : "0",
-    meal_date : "0"
+    meal_date : "0",
+    id_child : "0",
   }]
 
   constructor( 
@@ -44,6 +45,7 @@ export class ModalPage implements OnInit {
   onSubmit(form: NgForm){
     //gather input data
     this.meal = form.value;
+    this.meal.id_child = this.service.currentChild[0].id_child;
 
     //Submit HTTP request
     this.service.postData(this.url,this.meal);

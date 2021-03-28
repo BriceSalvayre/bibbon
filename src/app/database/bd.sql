@@ -88,7 +88,11 @@ ON c.id_child = r.id_child
 JOIN users u
 ON u.id_user = r.id_user;
 
+
 -- Procédure stockées
+
+
+-- Renvoi "id_user" si MAIL et MDP correspond
 DELIMITER //
 CREATE PROCEDURE login
 (IN userMail CHAR(20), IN userPass CHAR(20))
@@ -98,6 +102,85 @@ FROM users
 WHERE user_mail = userMail AND user_password = userPass;
 END //
 DELIMITER ;
-
 -- Appel de la procédure
 CALL login('mail','pass');
+
+/* OBSOLETE
+-- Renvoi SELECT * meal 
+-- id_user en entré
+DROP PROCEDURE IF EXISTS catchMeal;
+DELIMITER //
+CREATE PROCEDURE catchMeal
+(IN idUser int)
+BEGIN
+SELECT *
+FROM meal m
+JOIN childs c
+ON c.id_child = m.id_child
+JOIN relationship r
+ON r.id_child = c.id_child
+JOIN users u
+ON u.id_user = r.id_user
+WHERE u.id_user = idUser;
+END //
+DELIMITER
+-- Appel de la procédure
+CALL catchMeal(10);
+*/
+
+
+-- Renvoi SELECT * meal 
+-- id_child en entré
+DROP PROCEDURE IF EXISTS catchMeal;
+DELIMITER //
+CREATE PROCEDURE catchMeal
+(IN idChild int)
+BEGIN
+SELECT *
+FROM meal m
+JOIN childs c
+ON c.id_child = m.id_child
+WHERE c.id_child = idChild;
+END //
+DELIMITER ;
+-- Appel de la procédure
+CALL catchMeal(10);
+
+
+-- Renvoi id_child 
+-- id_user en entré
+DROP PROCEDURE IF EXISTS catchChild;
+DELIMITER //
+CREATE PROCEDURE catchChild
+(IN idUser int)
+BEGIN
+SELECT c.id_child
+FROM childs c
+JOIN relationship r
+ON c.id_child = r.id_child
+JOIN users u
+ON u.id_user = r.id_user
+WHERE u.id_user = idUser;
+END //
+DELIMITER ;
+-- Appel de la procédure
+call catchChild(1);
+
+-- @RETURN SELECT * FROM meal where (?)
+-- @IN (id_child)
+DROP PROCEDURE IF EXISTS lastMeal;
+DELIMITER //
+CREATE PROCEDURE lastMeal
+(IN idChild int)
+BEGIN
+SELECT *
+FROM meal m
+JOIN childs c
+ON c.id_child = m.id_child
+WHERE c.id_child = idChild
+ORDER BY id_meal DESC
+LIMIT 2;
+END //
+DELIMITER
+-- Appel de la procédure
+CALL lastMeal(10);

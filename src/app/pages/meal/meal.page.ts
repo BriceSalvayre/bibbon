@@ -12,7 +12,7 @@ export class MealPage implements OnInit{
   babyName = "Joe";
 
   // Initialisation de l'url de la page
-  public url = "meal";
+  public url = "meal/";
 
   // Initialisation du repas
   public meal :any =[{
@@ -28,7 +28,7 @@ export class MealPage implements OnInit{
     
     {
       // Concaténation de l'url dans le service et de la page 
-      this.url = this.service.APIurl + this.url ;
+      this.url = this.service.APIurl + this.url + this.service.currentChild[0].id_child;
     }
 
   // Lors de l'initialisation de la page
@@ -53,7 +53,7 @@ export class MealPage implements OnInit{
   getData(){
      this.http.get(this.url).subscribe(
       (response) =>{
-        this.meal = response;
+        this.meal = response[0];
         console.log(this.meal)
         return this.meal;
       },

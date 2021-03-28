@@ -9,7 +9,8 @@ import { promise } from 'protractor';
 
 export class UserService {
 
-  public dataUser = [{id_user : 0}];
+  public dataUser = [{id_user : 1}];
+  public currentChild = [{id_child : 10}];
    
 
   public tableau : {};
