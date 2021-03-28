@@ -11,7 +11,7 @@ import { UserService } from 'src/app/services/user.service';
 export class DiaryPage implements OnInit {
   public child : any = [{
     child_name : "john ",
-    child_age : " hier",
+    child_age : " ",
     child_weight : " ",
     child_height : " 50",
     child_gender : " "

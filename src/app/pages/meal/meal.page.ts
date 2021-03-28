@@ -3,12 +3,17 @@ import { ModalPage } from './modal/modal.page';
 import { Component,OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { ModalController } from '@ionic/angular';
+import {Plugins} from "@capacitor/core";
+const { BluetoothSerial } = Plugins;
+
 @Component({
   selector: "app-meal",
   templateUrl: "./meal.page.html",
   styleUrls: ["./meal.page.scss"],
 })
+
 export class MealPage implements OnInit{
+  
   babyName = "Joe";
 
   // Initialisation de l'url de la page
@@ -33,8 +38,19 @@ export class MealPage implements OnInit{
 
   // Lors de l'initialisation de la page
   ngOnInit() {
-    this.getData(); 
+    this.getData();
+    BluetoothSerial
+  .isEnabled()
+  .then((response) => {
+    const message = response.enabled ? 'enabled' : 'disabled';
+    console.log(`Bluetooth is ${message}`);
+  })
+  .catch(() => {
+    console.log('Error checking bluetooth status');
+  });
   }
+  
+
 
   // Affichage de la page modal sur la page meal
   async presentModal() {
